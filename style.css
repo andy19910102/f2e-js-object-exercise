@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 18px;
+    line-height: 2;
+}
+
+#scrollReport {
+    color: white;
+    background: black;
+    padding: 10px 10px;
+    border-radius: 4px;
+    opacity: .7;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1000;
+}
+
+#scrollReport:hover {
+    opacity: .9;
+}
