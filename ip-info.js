@@ -10,5 +10,9 @@ const getIPBtn = document.getElementById('getIPBtn'),
 
 getIPBtn.addEventListener('click', function () {
     console.log('[按鈕被點擊了]');
+    // 使用IPInfo API取得使用者網路資訊
+    // IPInfo API使用規則
+    // https://ipinfo.io/developers#jsonpcors-requests
+
 
 });

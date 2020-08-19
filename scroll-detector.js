@@ -5,13 +5,14 @@ const navLinkList = document.querySelectorAll('.navbar a.nav-link'),
     // 滑動資訊報告元件
     scrollReport = document.getElementById('scrollReport');
 
-// TODO: 建立章節資訊查詢表
+// TODO: 建立章節資訊查詢表 navigationTable
 /* 
  * {
  *    section1: {section: sectionDOM, navLink: navLinkDOM},
  *    section2: {...}, ...
  * }
  */
+const navigationTable = {};
 
 
 // 綁定視窗(window)的滾動事件(scroll)
@@ -23,4 +24,5 @@ window.addEventListener('scroll', function () {
     // TODO: 取得每個章節的所在位置頂邊座標(offsetTop)、底邊座標(offsetTop + offsetHeight)
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight
+
 })
