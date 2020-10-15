@@ -5,11 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>物件建構式</title>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/atom-one-light.min.css">
 </head>
 
 <body>
     <h1>物件建構式</h1>
     <p>一種用於產生物件資料的函數。</p>
+    <pre class="demo-code">
+        <code>
+// 設計一個用於建立產品的建構式
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+    this.createdAt = new Date().getTime();
+
+    this.intro = function () {
+        console.log(`產品名稱:${this.name} 產品價格:${this.price}`)
+    }
+}
+// 建立一項產品
+const product1 = new Product('紅茶', 10);
+// 讓產品使用intro函數
+product1.intro();
+// 產品名稱:紅茶 產品價格:10
+        </code>
+    </pre>
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+    <script src="./highlight-code.js"></script>
     <script src="./constructor.js"></script>
 </body>
 

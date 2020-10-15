@@ -25,4 +25,4 @@ window.addEventListener('scroll', function () {
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight
 
-})
+});
