@@ -8,7 +8,7 @@ const navLinkList = document.querySelectorAll('.navbar a.nav-link'),
 // TODO: 建立章節資訊查詢表 navigationTable
 /* 
  * {
- *    section1: {section: sectionDOM, navLink: navLinkDOM},
+ *    section1: {section: sectionDOM, link: navLinkDOM},
  *    section2: {...}, ...
  * }
  */
