@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待辦事項</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <style>
+        .todo-color-box {
+            width: 24px;
+            height: 24px;
+            border-radius: 2px;
+            margin-right: 10px;
+        }
+
+        #todoList .list-group-item,
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #todoList .list-group-item h5 {
+            color: #333;
+            margin-bottom: 0px;
+        }
+
+        .list-group-left {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <div class="container">
+            <h1>待辦事項</h1>
+        </div>
+    </header>
+    <section class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-header">待辦事項管理表單</div>
+                        <!-- createTodoForm -->
+                        <form id="createTodoForm" class="card-body">
+                            <div class="form-group">
+                                <label for="createTodoTitle">標題</label>
+                                <input id="createTodoTitle" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="createTodoColor">顏色</label>
+                                <select name="createTodoColor" id="createTodoColor" class="form-control" required>
+                                    <option class="primary">藍色</option>
+                                    <option class="danger">紅色</option>
+                                    <option class="success">綠色</option>
+                                    <option class="warning">黃色</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success">建立待辦項目</button>
+                            </div>
+                        </form>
+                        <!-- createTodoForm end -->
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="card">
+                        <div class="card-header">
+                            待辦清單
+                        </div>
+                        <!-- Bootstrap List Group 可參考 -->
+                        <!-- https://getbootstrap.com/docs/4.6/components/card/ -->
+                        <!-- todoList -->
+                        <ul id="todoList" class="list-group list-group-flush">
+                            <!-- list-group-item -->
+                            <li class="list-group-item">
+                                <div class="list-group-left">
+                                    <div class="todo-color-box bg-primary"></div>
+                                    <h5>待辦項目1</h5>
+                                </div>
+                                <div class="list-group-right">
+                                    <button class="btn btn-sm btn-danger delete-btn">
+                                        <i class="fas fa-times fa-fw"></i>
+                                    </button>
+                                </div>
+                            </li>
+                            <!-- list-group-item end -->
+                            <!-- list-group-item -->
+                            <li class="list-group-item">
+                                <div class="list-group-left">
+                                    <div class="todo-color-box bg-warning"></div>
+                                    <h5>待辦項目2</h5>
+                                </div>
+                                <div class="list-group-right">
+                                    <button class="btn btn-sm btn-danger delete-btn">
+                                        <i class="fas fa-times fa-fw"></i>
+                                    </button>
+                                </div>
+                            </li>
+                            <!-- list-group-item end -->
+                            <!-- list-group-item -->
+                            <li class="list-group-item">
+                                <div class="list-group-left">
+                                    <div class="todo-color-box bg-success"></div>
+                                    <h5>待辦項目3</h5>
+                                </div>
+                                <div class="list-group-right">
+                                    <button class="btn btn-sm btn-danger delete-btn">
+                                        <i class="fas fa-times fa-fw"></i>
+                                    </button>
+                                </div>
+                            </li>
+                            <!-- list-group-item end -->
+                            <!-- list-group-item -->
+                            <li class="list-group-item">
+                                <div class="list-group-left">
+                                    <div class="todo-color-box bg-danger"></div>
+                                    <h5>待辦項目4</h5>
+                                </div>
+                                <div class="list-group-right">
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="fas fa-times fa-fw"></i>
+                                    </button>
+                                </div>
+                            </li>
+                            <!-- list-group-item end -->
+                        </ul>
+                        <!-- todoList end -->
+                        <div class="card-footer">
+                            <p class="mb-0">總共 <span id="todoListLength" class="font-weight-bold">4</span> 筆待辦項目</p>
+                            <button class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash-alt"></i> 清空待辦清單
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <script src="./todo-list.js"></script>
+</body>
+
+</html>
