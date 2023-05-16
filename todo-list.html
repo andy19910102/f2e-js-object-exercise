@@ -5,73 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>待辦事項</title>
+    <title>TODO List App</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <style>
-        .todo-color-box {
-            width: 24px;
-            height: 24px;
-            border-radius: 2px;
-            margin-right: 10px;
-        }
-
-        #todoList .list-group-item,
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #todoList .list-group-item h5 {
-            color: #333;
-            margin-bottom: 0px;
-        }
-
-        .list-group-left {
-            display: flex;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/todo-list.css">
 </head>
 
 <body>
-    <header class="bg-light py-5 mb-3">
+    <!-- header -->
+    <header class="bg-light mb-3">
         <div class="container">
-            <h1>待辦事項</h1>
+            <h1>TODO List App</h1>
+            <p>Design shopping cart using the <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+                    target="_blank">JavaScript LocalStorage API</a>.</p>
         </div>
     </header>
+    <!-- header end -->
+    <!-- section -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-sm-5">
-                    <div class="card">
-                        <div class="card-header">待辦事項管理表單</div>
+                <div class="col-md-5">
+                    <div class="card mb-3">
+                        <div class="card-header">Create TODO Form</div>
                         <!-- createTodoForm -->
                         <form id="createTodoForm" class="card-body">
                             <div class="mb-3">
-                                <label for="createTodoTitle" class="form-label">標題</label>
-                                <input id="createTodoTitle" type="text" class="form-control" required>
+                                <label for="createTodoTitle" class="form-label">Title:</label>
+                                <input id="createTodoTitle" value="TODO A" type="text" class="form-control"
+                                    placeholder="EX: Complete a work presentation." required>
                             </div>
                             <div class="mb-3">
-                                <label for="createTodoColor" class="form-label">顏色</label>
+                                <label for="createTodoColor" class="form-label">Color:</label>
                                 <select name="createTodoColor" id="createTodoColor" class="form-control" required>
-                                    <option class="primary">藍色</option>
-                                    <option class="danger">紅色</option>
-                                    <option class="success">綠色</option>
-                                    <option class="warning">黃色</option>
+                                    <option class="primary">Blue</option>
+                                    <option class="danger">Red</option>
+                                    <option class="success">Green</option>
+                                    <option class="warning">Yellow</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success">建立待辦項目</button>
+                                <button class="btn btn-success">📝 Create a TODO</button>
                             </div>
                         </form>
                         <!-- createTodoForm end -->
                     </div>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-md-7">
                     <div class="card">
                         <div class="card-header">
-                            待辦清單
+                            TODO List
                         </div>
                         <!-- Bootstrap List Group 可參考 -->
                         <!-- https://getbootstrap.com/docs/4.6/components/card/ -->
@@ -81,11 +66,14 @@
                             <li class="list-group-item">
                                 <div class="list-group-left">
                                     <div class="todo-color-box bg-primary"></div>
-                                    <h5>待辦項目1</h5>
+                                    <h5>Buy groceries for the week.
+                                        <br>
+                                        <span class="created-at">Created at 2023.02.20 17:15:24</span>
+                                    </h5>
                                 </div>
                                 <div class="list-group-right">
-                                    <button class="btn btn-sm btn-danger delete-btn">
-                                        <i class="fas fa-times fa-fw"></i>
+                                    <button class="delete-btn" type="button">
+                                        <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
                             </li>
@@ -94,11 +82,14 @@
                             <li class="list-group-item">
                                 <div class="list-group-left">
                                     <div class="todo-color-box bg-warning"></div>
-                                    <h5>待辦項目2</h5>
+                                    <h5>Pay monthly bills.
+                                        <br>
+                                        <span class="created-at">Created at 2023.03.20 13:12:21</span>
+                                    </h5>
                                 </div>
                                 <div class="list-group-right">
-                                    <button class="btn btn-sm btn-danger delete-btn">
-                                        <i class="fas fa-times fa-fw"></i>
+                                    <button class="delete-btn" type="button">
+                                        <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
                             </li>
@@ -107,11 +98,14 @@
                             <li class="list-group-item">
                                 <div class="list-group-left">
                                     <div class="todo-color-box bg-success"></div>
-                                    <h5>待辦項目3</h5>
+                                    <h5>Attend a yoga class.
+                                        <br>
+                                        <span class="created-at">Created at 2023.03.21 05:23:32</span>
+                                    </h5>
                                 </div>
                                 <div class="list-group-right">
-                                    <button class="btn btn-sm btn-danger delete-btn">
-                                        <i class="fas fa-times fa-fw"></i>
+                                    <button class="delete-btn" type="button">
+                                        <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
                             </li>
@@ -120,11 +114,14 @@
                             <li class="list-group-item">
                                 <div class="list-group-left">
                                     <div class="todo-color-box bg-danger"></div>
-                                    <h5>待辦項目4</h5>
+                                    <h5>Schedule a dentist appointment.
+                                        <br>
+                                        <span class="created-at">Created at 2023.03.24 21:14:59</span>
+                                    </h5>
                                 </div>
                                 <div class="list-group-right">
-                                    <button class="btn btn-sm btn-danger">
-                                        <i class="fas fa-times fa-fw"></i>
+                                    <button class="delete-btn" type="button">
+                                        <i class="fa-solid fa-xmark"></i>
                                     </button>
                                 </div>
                             </li>
@@ -132,9 +129,10 @@
                         </ul>
                         <!-- todoList end -->
                         <div class="card-footer">
-                            <p class="mb-0">總共 <span id="todoListLength" class="font-weight-bold">4</span> 筆待辦項目</p>
-                            <button class="btn btn-sm btn-danger">
-                                <i class="fas fa-trash-alt"></i> 清空待辦清單
+                            <p class="mb-0">We have <span id="todoListLength" class="font-weight-bold">4</span> TODO
+                                in the list.</p>
+                            <button id="clearTodoListBtn" class="btn btn-dark" type="button">
+                                🗑️ Clear TODO List
                             </button>
                         </div>
                     </div>
@@ -142,10 +140,18 @@
             </div>
         </div>
     </section>
+    <!-- section end -->
+    <!-- footer -->
+    <footer class="text-center">
+        <p>Copyright &copy;2023 <a target="_blank" rel="noopener"
+                href="https://github.com/andy19910102/f2e-js-object-exercise">
+                Github Repository <i class="fa-brands fa-github-alt"></i></a> </p>
+    </footer>
+    <!-- footer end -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./todo-list.js"></script>
+    <script src="./javascripts/todo-list.js"></script>
 </body>
 
 </html>
